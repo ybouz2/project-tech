@@ -1,0 +1,25 @@
+{
+  "name": "project-tech",
+  "version": "1.0.0",
+  "description": "Inloggen of Aanmelden",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ybouz2/project-tech.git"
+  },
+  "keywords": [
+    "[\"Oppas\"",
+    "\"Kinderen\"",
+    "\"Verzorgen\"",
+    "\"Gezocht\"]"
+  ],
+  "author": "Yousri Bouzaien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ybouz2/project-tech/issues"
+  },
+  "homepage": "https://github.com/ybouz2/project-tech#readme"
+}
