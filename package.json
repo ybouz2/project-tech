@@ -24,5 +24,8 @@
   "homepage": "https://github.com/ybouz2/project-tech#readme",
   "dependencies": {
     "camelcase": "^6.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
