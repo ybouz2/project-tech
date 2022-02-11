@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/ybouz2/project-tech#readme",
   "dependencies": {
-    "camelcase": "^6.3.0"
+    "camelcase": "^6.3.0",
+    "login": "^0.8.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
