@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-  res.send("Log In of maak een account");
+  res.render("main2");
 });
 
 app.get('/about', (req, res) => {

@@ -1,4 +1,32 @@
 * {
-    color: #696969
+    color: #000;
+    font-family: Helvetica, Arial, sans-serif;
+}
+header{
+    background-color: #F0E68C;
+}
+header ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
+header ul li{
+    list-style: none;
+    padding: 1em;
+    
+    
+}
+a{
+    text-decoration: none;
+}
+
+header ul li:hover{
+    border-bottom: solid #000 1px;
+}
+
+form section{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
