@@ -17,6 +17,7 @@ header ul li{
     
     
 }
+
 a{
     text-decoration: none;
 }
@@ -25,8 +26,37 @@ header ul li:hover{
     border-bottom: solid #000 1px;
 }
 
+h1{
+    text-align: center;
+}
+
+form{
+    margin: auto;
+    width: 250px;
+}
+
 form section{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    justify-content: center;
+    
+}
+
+label{
+    margin: .5em;
+    margin-left: 0;
+}
+
+input{
+    padding: 1em;
+}
+
+button{
+    padding: .5em;
+    margin-top: 1em;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
 }
