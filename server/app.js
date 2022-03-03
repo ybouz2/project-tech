@@ -15,7 +15,8 @@ const { engine } = require ('express-handlebars');
 const users = [];
 
 
-const initializePassport = require('./passport-config')
+const   initializePassport   = require('./passport-config')
+
 initializePassport(
   passport, 
   email => users.find(user => user.email === email))
