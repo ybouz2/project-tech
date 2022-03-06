@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const passport = require('passport');
 const flash = require('express-flash')
 const session = require('express-session')
+const initialize = require('./')
 
 const app = express();
 const port = 3000;
