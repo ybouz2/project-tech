@@ -8,6 +8,7 @@ const passport = require('passport');
 const flash = require('express-flash')
 const session = require('express-session')
 const initialize = require('./')
+const methodOverride = require('method-override')
 
 const app = express();
 const port = 3000;
@@ -15,13 +16,26 @@ const { engine } = require ('express-handlebars');
 
 const users = [];
 
+const {utilsDB}  = require('./utils/db')
 
-const   initializePassport   = require('./passport-config')
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://ybouz:<Sihem1001!>@cluster0.weqjj.mongodb.net/project-tech-ybouz?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  
+  // perform actions on the collection object
+  client.close();
+});
+
+const initializePassport = require('./passport-config')
 
 initializePassport(
   passport, 
-  email => users.find(user => user.email === email))
+  email => users.find(user => user.email === email),
   id => users.find(user => user.id === id)
+)
 
 app.set('view engine', 'hbs');
 app.use(express.urlencoded({ extended: false}))
@@ -32,6 +46,8 @@ app.use(session({
     saveUninitialized: false
   }
 ))
+
+app.use(methodOverride('_method'))
 
 app.use(passport.initialize())
 app.use(passport.session())
@@ -52,10 +68,10 @@ app.engine('hbs', engine({
 app.use (express.static('public'));
 
 app.get('/', (req, res) => {
-  res.render('main');
+  res.render('main', {name: req.user.name});
 })
 
-app.get('/login', (req, res) => {
+app.get('/login',  (req, res) => {
   res.render("login");
 });
 
@@ -72,7 +88,7 @@ app.get('/register', (req, res) => {
   res.render("register");
 });
 
-app.post('/register', async (req, res) => {
+app.post('/register',  async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10)
 
@@ -97,4 +113,4 @@ app.get('*', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
-});
+})
