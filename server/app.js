@@ -1,6 +1,6 @@
-if (process.env.NODE_ENV !== 'production'){
-    require('dotenv').config()
-}
+
+require('dotenv').config()
+
 
 const express = require('express');
 const bcrypt = require('bcrypt');
@@ -18,13 +18,12 @@ const users = [];
 
 const {utilsDB}  = require('./utils/db')
 
-
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://ybouz:<Sihem1001!>@cluster0.weqjj.mongodb.net/project-tech-ybouz?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.weqjj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
-  
+  console.log('connection made')
   // perform actions on the collection object
   client.close();
 });
