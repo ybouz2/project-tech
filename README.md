@@ -13,17 +13,17 @@ This is the GitHub repository for my babysitter matching website feature. I deci
 
 It was pretty diffucult to work with passport but at the end it worked. here is a list of future's:
 
-Markup:
-*Hashed password
-*Connection to a database to save all the information that users upload
-*Different backend validation, for example to make sure that multiple users can't have the same username
+
+*   Hashed password
+*   Connection to a database to save all the information that users upload
+*   Different backend validation, for example to make sure that multiple users can't have the same username
 
 Things I might add in the future:
 
-Markup:
-*Password changing
-*Account changing
-*Add a profile picture
+
+*   Password changing
+*   Account changing
+*   Add a profile picture
 
 
 
