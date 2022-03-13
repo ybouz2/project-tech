@@ -157,7 +157,7 @@ app.post("/verwijder", async (req, res) => {
 
   await client.connect()
 
-  client.db('Accounts').collection('AllAccounts').deleteOne({ id: req.body._id })
+  client.db('Accounts').collection('AllAccounts').deleteOne({ username: req.body.delete })
 
   res.redirect('/login')
 
@@ -181,18 +181,18 @@ app.post('/login', passport.authenticate('local-signin', {
 
 
 
-//Logt de gebruiker uit van de site.
-app.get('/logout', (req, res) => {
-  const name = req.user.username;
-  console.log("Uitloggen " + req.user.username)
-  req.logout();
-  res.redirect('/');
-  req.session.notice = "Succesvol uitgelogd " + name + "!";
-});
+// //Logt de gebruiker uit van de site.
+// app.get('/logout', (req, res) => {
+//   const name = req.user.username;
+//   console.log("Uitloggen " + req.user.username)
+//   req.logout();
+//   res.redirect('/');
+//   req.session.notice = "Succesvol uitgelogd " + name + "!";
+// });
 
 
 
 //===============POORT=================
-const port = process.env.PORT || 3000; //select your port or let it pull from your .env file
+const port = process.env.PORT || 3000; //kies je poortnummer
 app.listen(port);
 console.log("listening on " + port + "!");
