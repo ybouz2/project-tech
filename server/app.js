@@ -157,7 +157,7 @@ app.post("/verwijder", async (req, res) => {
 
   await client.connect()
 
-  client.db('Accounts').collection('AllAccounts').deleteOne({ username: req.body._id })
+  client.db('Accounts').collection('AllAccounts').deleteOne({ id: req.body._id })
 
   res.redirect('/login')
 
