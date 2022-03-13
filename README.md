@@ -50,11 +50,11 @@ Refer to my [packages](https://github.com/ybouz2/project-tech/wiki/Packages) wik
 
 Most of the information I got from the lesson. In addition, I also received a lot of information from student assistants and students. I also watched tutorials on the internet and looked at articles that gave me additional information:
 
-[dotenv](https://www.npmjs.com/package/dotenv)
-[handlebars](https://www.npmjs.com/package/express-handlebars)
-[passport](https://www.npmjs.com/package/passport)
-[mongoDB](https://www.mongodb.com/)
-[body-parser](https://www.npmjs.com/search?q=body-parser)
-[Webdev Turtorial](https://www.youtube.com/watch?v=-RCnNyD0L-s)
+*   [dotenv](https://www.npmjs.com/package/dotenv)
+*   [handlebars](https://www.npmjs.com/package/express-handlebars)
+*   [passport](https://www.npmjs.com/package/passport)
+*   [mongoDB](https://www.mongodb.com/)
+*   [body-parser](https://www.npmjs.com/search?q=body-parser)
+*   [Webdev Turtorial](https://www.youtube.com/watch?v=-RCnNyD0L-s)
 
 
