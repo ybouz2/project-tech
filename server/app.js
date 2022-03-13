@@ -143,17 +143,17 @@ app.get('/', (req, res) => {
 });
 
 //Log-in pagina laten zien
-app.get('/login', checkNotAuth, (req, res) => {
+app.get('/login', (req, res) => {
   res.render('login');
 });
 
 //Registreer pagina laten zien
-app.get('/register', checkNotAuth, (req, res) => {
+app.get('/register', (req, res) => {
   res.render('register');
 });
 
 // Laat de gebruiker zijn/haar account verwijderen
-app.post("/verwijder", async (req, res) => {
+app.post("/", async (req, res) => {
 
   await client.connect()
 
@@ -190,15 +190,6 @@ app.post('/login', passport.authenticate('local-signin', {
 //   req.session.notice = "Succesvol uitgelogd " + name + "!";
 // });
 
-// Functie
-
-function checkNotAuth(req, res, next){
-  if(req.isAuthenticated()){
-    res.redirect("/")
-  }
-
-  next()
-}
 
 
 
