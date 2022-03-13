@@ -28,12 +28,14 @@ Things I might add in the future:
 
 
 ## Instalation
-
-$ git clone https://github.com/ybouz2/project-tech.git
-
+```
+$   git clone https://github.com/ybouz2/project-tech.git
+```
 ## Run
 
-$ node app.js
+```
+$   node app.js
+```
 localhost:3000 in browser
 
 ## Extentions
