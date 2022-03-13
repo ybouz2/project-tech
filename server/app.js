@@ -14,10 +14,8 @@ const { Db } = require('mongodb');
 
 const config = require('./config'),
       funct = require('./functions');
- 
-const app = express();
 
-//FUNCTION
+const app = express();
 
 // MongoDB connectie informatie
 
@@ -28,7 +26,7 @@ const client = new MongoClient(mongodbUrl, { useNewUrlParser: true, useUnifiedTo
 
 // PASSPORT
 
-// Passport session setup.
+// Passport sessie.
 passport.serializeUser( (user, done) => {
   console.log("serializing " + user.username);
   done(null, user);
@@ -40,20 +38,20 @@ passport.deserializeUser((obj, done) => {
 });
 
 
-// Use the LocalStrategy within Passport to login/"signin" users.
+// Gebruik de LocalStrategy in Passport om gebruikers in te loggen/ te registreren.
 passport.use('local-signin', new LocalStrategy(
-  {passReqToCallback : true}, //allows us to pass back the request to the callback
+  {passReqToCallback : true}, //Request naar Callback
   (req, username, password, done) => {
     funct.localAuth(username, password)
     .then( (user) => {
       if (user) {
         console.log("LOGGED IN AS: " + user.username);
-        req.session.success = 'You are successfully logged in ' + user.username + '!';
+        req.session.success = 'Je bent succesvol ingelogd ' + user.username + '!';
         done(null, user);
       }
       if (!user) {
         console.log("COULD NOT LOG IN");
-        req.session.error = 'Could not log user in. Please try again.'; //inform user could not log them in
+        req.session.error = 'Kon gebruiker niet inloggen.'; //iGebruiker word geinformeerd dat hij/zij niet kan inloggen
         done(null, user);
       }
     })
@@ -62,20 +60,21 @@ passport.use('local-signin', new LocalStrategy(
     });
   }
 ));
-// Use the LocalStrategy within Passport to register/"signup" users.
+
+// Gebruik de LocalStrategy in Passport om gebruikers in te loggen/ te registreren.
 passport.use('local-signup', new LocalStrategy(
-  {passReqToCallback : true}, //allows us to pass back the request to the callback
+  {passReqToCallback : true}, //Request naar Callback
   (req, username, password, done) => {
     funct.localReg(username, password)
     .then( (user) => {
       if (user) {
         console.log("REGISTERED: " + user.username);
-        req.session.success = 'You are successfully registered and logged in ' + user.username + '!';
+        req.session.success = 'Je bent succesvol geregistreerd en ingelogt. ' + user.username + '!';
         done(null, user);
       }
       if (!user) {
         console.log("COULD NOT REGISTER");
-        req.session.error = 'That username is already in use, please try a different one.'; //inform user could not log them in
+        req.session.error = 'Gebruikersnaam al in gebruik kies een andere en probeer opnieuw'; //
         done(null, user);
       }
     })
@@ -154,11 +153,11 @@ app.get('/register', (req, res) => {
 });
 
 // Laat de gebruiker zijn/haar account verwijderen
-app.post("/", async (req, res) => {
+app.post("/verwijder", async (req, res) => {
 
   await client.connect()
 
-  client.db('Accounts').collection('AllAccounts').deleteOne({ id: req.body._id })
+  client.db('Accounts').collection('AllAccounts').deleteOne({ username: req.body._id })
 
   res.redirect('/login')
 

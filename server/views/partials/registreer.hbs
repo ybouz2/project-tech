@@ -8,7 +8,7 @@
             {{#if messages.error}}
 {{messages.error}}
 {{/if}}
-   <form id="local-reg" action="/login" method="post">
+   <form id="local-reg" action="/login" method="post" enctype="multipart/form-data">
     
     
         <label>Gebruikersnaam:</label>
@@ -17,7 +17,10 @@
     
         <label>Wachtwoord:</label>
         <input type="password" name="password"/>
-    
+
+
+        
+
     
         <button type="submit" >Registreer</button>
     
