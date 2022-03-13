@@ -160,10 +160,7 @@ app.post('/login', passport.authenticate('local-signin', {
   })
 );
 
-app.post('/', (req, res) => {
-funct.db.collections.deleteOne({id : req.body._id})
-res.redirect('/login')
-});
+
 
 //Logt de gebruiker uit van de site.
 app.get('/logout', (req, res) => {
