@@ -143,12 +143,12 @@ app.get('/', (req, res) => {
 });
 
 //Log-in pagina laten zien
-app.get('/login', (req, res) => {
+app.get('/login', checkNotAuth, (req, res) => {
   res.render('login');
 });
 
 //Registreer pagina laten zien
-app.get('/register', (req, res) => {
+app.get('/register', checkNotAuth, (req, res) => {
   res.render('register');
 });
 
@@ -189,6 +189,16 @@ app.post('/login', passport.authenticate('local-signin', {
 //   res.redirect('/');
 //   req.session.notice = "Succesvol uitgelogd " + name + "!";
 // });
+
+// Functie
+
+function checkNotAuth(req, res, next){
+  if(req.isAuthenticated()){
+    res.redirect("/")
+  }
+
+  next()
+}
 
 
 
