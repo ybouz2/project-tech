@@ -34,6 +34,11 @@ $   git clone https://github.com/ybouz2/project-tech.git
 ## Run
 
 ```
+cd server
+
+```
+
+```
 $   node app.js
 ```
 localhost:3000 in browser
