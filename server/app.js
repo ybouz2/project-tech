@@ -17,6 +17,15 @@ const config = require('./config'),
  
 const app = express();
 
+//FUNCTION
+
+// MongoDB connectie informatie
+
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const mongodbUrl = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.weqjj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const client = new MongoClient(mongodbUrl, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
+
 // PASSPORT
 
 // Passport session setup.
@@ -142,6 +151,17 @@ app.get('/login', (req, res) => {
 //Registreer pagina laten zien
 app.get('/register', (req, res) => {
   res.render('register');
+});
+
+// Laat de gebruiker zijn/haar account verwijderen
+app.post("/", async (req, res) => {
+
+  await client.connect()
+
+  client.db('Accounts').collection('AllAccounts').deleteOne({ id: req.body._id })
+
+  res.redirect('/login')
+
 });
 
 // Verzendt het verzoek via de lokale aanmeldingsstrategie, en als dit lukt, wordt de gebruiker naar de startpagina geleid, anders keert hij terug naar de aanmeldingspagina
