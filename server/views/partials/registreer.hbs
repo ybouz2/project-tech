@@ -1,19 +1,29 @@
-<form action="/register" method="POST" >  
+<form action="/register" method="POST">  
 
-<img src="img/oppas.png" alt="Illustartie oppas">
+ <img src="img/oppas.png" alt="Oppas illustratie">
         <section class="container">   
-            <h1>Maak een account aan!</h1>
-            <label for="email">E-mail </label>   
-            <input type="email" id="email" name="email" required>  
             
-            <label for="name">Gebruikersnaam </label>   
-            <input type="text" id="name" name="name" required>  
-            
-            <label for="password">Wachtwoord  </label>   
-            <input type="password" id="password" name="password" required>  
-           
-            <button type="submit">Registreer</button>   
-           
-           <p>Al een account? <a href="/login">Log in.</a></p>
+            <h1>Registreer</h1>
+
+            {{#if messages.error}}
+{{messages.error}}
+{{/if}}
+   <form id="local-reg" action="/login" method="post">
+    
+    
+        <label>Gebruikersnaam:</label>
+        <input type="text" name="username"/>
+    
+    
+        <label>Wachtwoord:</label>
+        <input type="password" name="password"/>
+    
+    
+        <button type="submit" >Registreer</button>
+    
+        
+
+            <p>Al een account? <a href="/login">Log in.</a></p>
         </section>   
  </form>   
+ 

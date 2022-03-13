@@ -1,2 +1,24 @@
-<h1>Welkom, {{name}} </h1>
+{{#if user}}
+  
+  <section class = 'main' >
+   <img src="img/oppas.png" alt="Oppas">
+    <section >
+      <h1>Profiel Informatie</h1>
+      <p>Welkom, {{user.username}}</p>
 
+      <form action="/" method = "POST">
+        <button>Verwijder account</button>
+      </form>
+
+    </section>
+    
+      
+    
+
+    
+    
+    </section>
+  
+
+
+{{/if}}
