@@ -38,7 +38,7 @@ cd server
 ```
 
 ```
-$   node app.js
+$   node index.js
 ```
 localhost:3000 in browser
 
