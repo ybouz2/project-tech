@@ -34,7 +34,7 @@ $   git clone https://github.com/ybouz2/project-tech.git
 ## Run
 
 ```
-cd server
+$   cd server
 ```
 
 If you want to run Nanny's Login/register feature, and you have cloned this repo to your desktop like explained above, go to its root directory and run npm install to install its dependencies.
