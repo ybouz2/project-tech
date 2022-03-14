@@ -52,7 +52,7 @@ passport.use('local-signin', new LocalStrategy(
       if (!user) {
         console.log("COULD NOT LOG IN");
         req.session.error = 'Kon gebruiker niet inloggen.'; //iGebruiker word geinformeerd dat hij/zij niet kan inloggen
-        done(null, user);
+        return done(null, false, {message: 'Verkeerde gebruikersnaam of wachtwoord'})
       }
     })
     .fail((err) => {
@@ -75,7 +75,7 @@ passport.use('local-signup', new LocalStrategy(
       if (!user) {
         console.log("COULD NOT REGISTER");
         req.session.error = 'Gebruikersnaam al in gebruik kies een andere en probeer opnieuw'; //
-        done(null, user);
+        return done(null, false, {message: 'Gebruikersnaam bestaat al'})
       }
     })
     .fail( (err) => {
@@ -88,6 +88,7 @@ passport.use('local-signup', new LocalStrategy(
 // Express Configureren
 app.use(express.urlencoded({ extended: false}));
 app.use(express.static(__dirname + '/public'));
+
 app.use(logger('combined'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -197,3 +198,4 @@ app.post('/login', passport.authenticate('local-signin', {
 const port = process.env.PORT || 3000; //kies je poortnummer
 app.listen(port);
 console.log("listening on " + port + "!");
+

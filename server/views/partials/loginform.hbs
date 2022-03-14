@@ -5,8 +5,8 @@
             
             <h1>Log in</h1>
 
-            {{#if success}}
-{{success}}
+            {{#if messages.error}}
+{{messages.error}}
 {{/if}}
    <form id="local-sign-in" action="/login" method="post">
     

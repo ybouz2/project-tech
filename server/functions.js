@@ -25,9 +25,13 @@ exports.localReg =  (username, password) => {
       //check if username is already assigned in our database
       collection.findOne({'username' : username})
         .then( (result) => {
+          
           if (null != result) {
             console.log("Gebruikersnaam al in gebruik:", result.username);
-            deferred.resolve(false); // username exists
+            deferred.resolve(false); // gebruikersnaam bestaat al
+            
+            
+            
            
           }
           else  {
@@ -35,7 +39,7 @@ exports.localReg =  (username, password) => {
             const user = {
               "username": username,
               "password": hash,
-
+            
             }
   
             console.log("Gebruiker word aangemaakt:", username);
@@ -47,7 +51,13 @@ exports.localReg =  (username, password) => {
               });
           }
         });
+
+        
+
+        
     });
+   
+
   
     return deferred.promise;
   };
