@@ -1,6 +1,6 @@
 # Nanny's - Project Tech: Matching Application (Register/Login Feature)
 
-![Nanny,s](server/images/bannerimage.png)
+![Nanny,s](images/bannerimage.png)
 
 
 This is the GitHub repository for my babysitter matching website feature. I decided to make the signup and login part of the website. 
