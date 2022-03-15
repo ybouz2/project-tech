@@ -14,8 +14,8 @@ const LocalStrategy = require('passport-local');
 const { Db } = require('mongodb');
 const flash = require('express-flash');
 
-const config = require('./config');
-const funct = require('./functions');
+const config = require('config.js');
+const funct = require('functions.js');
 
 const app = express();
 

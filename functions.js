@@ -4,7 +4,7 @@ require('dotenv').config()
 
 const bcrypt = require('bcryptjs'),
     Q = require('q'),
-    config = require('./config.js'); //config file bevat alle tokens en andere prive info
+    config = require('config.js'); //config file bevat alle tokens en andere prive info
 
 // MongoDB connectie informatie
 
