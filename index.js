@@ -1,19 +1,21 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 require('dotenv').config()
 
-const express = require('express'),
-      { engine } = require('express-handlebars'),
-      logger = require('morgan'),
-      cookieParser = require('cookie-parser'),
-      bodyParser = require('body-parser'),
-      methodOverride = require('method-override'),
-      session = require('express-session'),
-      passport = require('passport'),
-      LocalStrategy = require('passport-local');
+const express = require('express');
+const { engine } = require('express-handlebars');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+const session = require('express-session');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 const { Db } = require('mongodb');
-      flash = require('express-flash')
+const flash = require('express-flash');
 
-const config = require('./config'),
-      funct = require('./functions');
+const config = require('./config');
+const funct = require('./functions');
 
 const app = express();
 
