@@ -10,17 +10,19 @@
 {{/if}}
    <form id="local-sign-in" action="/login" method="post">
     
-    
+        <section class="flex">
         <label>Gebruikersnaam:</label>
         <input type="text" name="username"/>
+        </section>
     
-    
+        <section class="flex">
         <label>Wachtwoord:</label>
         <input type="password" name="password"/>
-    
-    
+        </section>
+
+        <section>
         <button type="submit" >Log in</button>
-    
+        </section>
         
 
             <p>Nog geen account? <a href="/register">Maak een account aan.</a></p>

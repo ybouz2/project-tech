@@ -1,16 +1,14 @@
 console.log("TEST");
 
-function validateForm(form)
-{
-    console.log("checkbox checked is ", form.agree.checked);
-    if(!form.agree.checked)
-    {
-        document.getElementById('agree_chk_error').style.visibility='visible';
-        return false;
-    }
-    else
-    {
-        document.getElementById('agree_chk_error').style.visibility='hidden';
-        return true;
-    }
-}
+const terms = document.getElementById("terms")
+const btn = document.getElementById("submit")
+												
+terms.onchange = function(){
+	if(terms.checked){
+		btn.disabled = false;
+	} else {
+		btn.disabled = true;
+        
+	}
+};
+

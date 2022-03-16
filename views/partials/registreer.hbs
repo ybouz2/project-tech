@@ -10,21 +10,22 @@
 {{/if}}
    <form id="local-reg" action="/login" method="post" enctype="multipart/form-data" onsubmit="return validateForm(this)">
     
-    
+        <section class="flex">
         <label>Gebruikersnaam:</label>
         <input type="text" name="username"/>
-    
-    
+        </section>
+
+        <section class="flex">
         <label>Wachtwoord:</label>
         <input type="password" name="password"/>
-
-
-       <input type="checkbox" name="agree" id="agree" value="yes" />
-       <label for="agree">Ik ga akkoord met de algemene voorwaarden</label>
-       <div style="visibility:hidden; color:red" id="agree_chk_error">
-        Can't proceed as you didn't agree to the terms! </div>
- 
-        <button type="submit" id="register" >Registreer</button>
+        </section>
+        
+        <section>
+        <input  type="checkbox" id="terms" name="terms_conditions" >
+		<label for="terms">Ik ga akkoord met de <a href="#">algemene voorwaarden</a></label>
+		</section>
+        
+        <button type="submit" id = "submit" disabled >Registreren</button>
     
         
 

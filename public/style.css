@@ -5,7 +5,10 @@
 
 body {
     background-color: #FFF0F5;
+    
 }
+
+
 
 header {
     background-color: #faf4f6;
@@ -69,11 +72,8 @@ form {
     width:100%;
 }
 
-form section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
+form section.container {
+    
     height: 100%;
     border-radius: 2em;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
@@ -100,6 +100,7 @@ input {
     margin-bottom: 1em;
     background-color: #faf4f6;
     border-radius: 2em;
+    caret-color: DeepPink;
     
 }
 
@@ -114,6 +115,7 @@ button {
     border-radius: 2em;
     background-color: #C0C0C0;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+    cursor: url('img/pacifier2.png'),auto;
 
 }
 
@@ -123,13 +125,20 @@ button:hover {
     
 }
 
+button:disabled{
+    opacity: 25%;
+}
+
 footer {
     position: absolute;
     bottom: 0;
 }
 
 .container {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
     background-color: #FFF;
     padding: 2em;
     border-radius: 2em;
@@ -138,18 +147,20 @@ footer {
 
 }
 
+.flex {
+display: flex;
+flex-direction: column;
+}
+
+
+
 footer {
     text-align: center;
     font-weight: 200;
     width: 100%;
 }
 
-section.main{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 section.main h1{
     background-color: none;
