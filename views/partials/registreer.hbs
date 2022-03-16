@@ -8,7 +8,8 @@
             {{#if messages.error}}
 {{messages.error}}
 {{/if}}
-   <form id="local-reg" action="/login" method="post" enctype="multipart/form-data" onsubmit="return validateForm(this)">
+    
+   <form id="local-reg" action="/login" method="post" enctype="multipart/form-data" >
     
         <section class="flex">
         <label>Gebruikersnaam:</label>
@@ -21,11 +22,11 @@
         </section>
         
         <section>
-        <input  type="checkbox" id="terms" name="terms_conditions" >
+        <input  type="checkbox" id="terms" name="terms_conditions" checked required >
 		<label for="terms">Ik ga akkoord met de <a href="#">algemene voorwaarden</a></label>
 		</section>
         
-        <button type="submit" id = "submit" disabled >Registreren</button>
+        <button type="submit" id = "submit" >Registreren</button>
     
         
 

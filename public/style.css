@@ -1,42 +1,27 @@
 * {
     color: #000;
     font-family: Helvetica, Arial, sans-serif;
+    
 }
 
 body {
+    position: relative;
     background-color: #FFF0F5;
+
+    
     
 }
 
 
 
-header {
-    background-color: #faf4f6;
+
+
+main{
     width: 100%;
-    font-weight: 200;
-
+    
 }
 
-header ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 
-header ul li {
-    list-style: none;
-    padding: 1em;
-
-
-}
-
-a {
-    color: #C0C0C0;
-}
-
-header ul li:hover {
-    border-bottom: solid #000 1px;
-}
 
 h1 {
     width: 378px;
@@ -44,10 +29,9 @@ h1 {
     margin: auto;
     text-align: center;
     padding: .5em;
-    background-color: #FFF;
     margin-bottom: 1em;
     margin-top: 0;
-    font-weight: 200;
+    font-weight: bold;
    
 
 }
@@ -110,12 +94,12 @@ button {
     margin-bottom: .5em;
     border: none;
     font-weight: bold;
-    width: 100%;
+    width: 50%;
     padding: .8em;
     border-radius: 2em;
     background-color: #C0C0C0;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
-    cursor: url('img/pacifier2.png'),auto;
+   
 
 }
 
@@ -129,10 +113,6 @@ button:disabled{
     opacity: 25%;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-}
 
 .container {
     display: flex;
@@ -153,15 +133,69 @@ flex-direction: column;
 }
 
 
+.pointed{
+    width: 7px;
+    height: 7px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 50%;
+  }
 
-footer {
+  .profile{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    background-color: #fff;
+    margin-top: 125px;
+    border-radius: 32px;
+    width: 500px;
+    height: 500px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+  }
+
+
+  .profile h1{
+      font-size: 32px;
+      margin-top: 50px;
+  }
+  .profile p{
+    font-size: 18px;
+    width: 75%;
     text-align: center;
-    font-weight: 200;
-    width: 100%;
+    margin: auto;
+    margin-bottom: 16px;
+}
+
+.profile  form:first-of-type button{
+    margin-top: 100px;
+    
+}
+
+.profile  form:nth-of-type(2) button{
+    background-color: red;
+    color: #fff;
+    
+}
+
+.profile  form:nth-of-type(2) button:hover{
+    background-color: darkred;
+    
+}
+
+.info img{
+
+    margin: auto;
+    margin-top: 50px;
+    width: 600px;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 
 
-section.main h1{
-    background-color: none;
-}
+  
