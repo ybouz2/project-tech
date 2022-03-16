@@ -8,7 +8,7 @@
             {{#if messages.error}}
 {{messages.error}}
 {{/if}}
-   <form id="local-reg" action="/login" method="post" enctype="multipart/form-data">
+   <form id="local-reg" action="/login" method="post" enctype="multipart/form-data" onsubmit="return validateForm(this)">
     
     
         <label>Gebruikersnaam:</label>
@@ -19,10 +19,12 @@
         <input type="password" name="password"/>
 
 
-        
-
-    
-        <button type="submit" >Registreer</button>
+       <input type="checkbox" name="agree" id="agree" value="yes" />
+       <label for="agree">Ik ga akkoord met de algemene voorwaarden</label>
+       <div style="visibility:hidden; color:red" id="agree_chk_error">
+        Can't proceed as you didn't agree to the terms! </div>
+ 
+        <button type="submit" id="register" >Registreer</button>
     
         
 

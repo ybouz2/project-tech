@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
+
 require('dotenv').config()
 
 const express = require('express');
 const { engine } = require('express-handlebars');
-const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -91,7 +91,6 @@ passport.use('local-signup', new LocalStrategy(
 app.use(express.urlencoded({ extended: false}));
 app.use(express.static(__dirname + '/public'));
 
-app.use(logger('combined'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
