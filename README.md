@@ -15,14 +15,14 @@ It was pretty diffucult to work with passport but at the end it worked. here is 
 
 
 *   Hashed password
-*   Connection to a database to save all the information that users upload
-*   Different backend validation, for example to make sure that multiple users can't have the same username
+*   Connection to a database to save login data when a user registered their account.
+*   Different backend validation, for example to make sure that multiple users can't have the same username.
 
 Things I might add in the future:
 
 
 *   Password changing
-*   Account changing
+*   Change profile
 *   Add a profile picture
 
 
