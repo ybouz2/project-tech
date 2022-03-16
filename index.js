@@ -184,7 +184,7 @@ app.post('/login', passport.authenticate('local-signin', {
 
 
 
-// //Logt de gebruiker uit van de site.
+// Logt de gebruiker uit van de site.
 // app.get('/logout', (req, res) => {
 //   const name = req.user.username;
 //   console.log("Uitloggen " + req.user.username)
