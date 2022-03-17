@@ -46,6 +46,11 @@ Now that we've connect to the database we can start the application this is done
 ```
 $   node index.js
 ```
+OR 
+
+```
+$   npm start
+```
 localhost:3000 in browser
 
 ## Extentions
