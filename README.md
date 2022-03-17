@@ -33,10 +33,6 @@ $   git clone https://github.com/ybouz2/project-tech.git
 ```
 ## Run
 
-```
-$   cd server
-```
-
 If you want to run Nanny's Login/register feature, and you have cloned this repo to your desktop like explained above, go to its root directory and run npm install to install its dependencies.
 
 Now it is time to connect a database to your project. In the root you will finde the files files `index.js` and `functions.js`   This is where you establish the connection with our dev database. In order to establish the connection, you need a `.env` file in the root of your project. Your `.env` file should then (at least for the database connection) contain the following information:
