@@ -8,7 +8,9 @@
 body {
     position: relative;
     width: 100%;
+    
 }
+
 
 h1{
     position: absolute;
@@ -101,6 +103,7 @@ button:disabled{
     padding: 32px;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
     background-color: #EF99A3;
     
 }
@@ -143,6 +146,22 @@ button:disabled{
 
 .hide{
     display: none;
+}
+
+.transition-right{
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+}
+
+html.is-animating .transition-right{
+    opacity: 1;
+    transform: translateX(200%);
+
+}
+
+html.is-leaving .transition-right{
+    opacity: 0;
 }
 
   
