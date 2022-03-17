@@ -1,201 +1,148 @@
 * {
-    color: #000;
+    padding: 0;
+    margin: 0;
+    color: #FFF;
     font-family: Helvetica, Arial, sans-serif;
     
 }
-
 body {
     position: relative;
-    background-color: #FFF0F5;
-
-    
-    
-}
-
-
-
-
-
-main{
     width: 100%;
-    
 }
 
+h1{
+    position: absolute;
+    top: 25px;
+    font-size: 52px;
+    margin-bottom: 32px;
+}
 
+p{
+    margin-top: 32px;
+    font-size: 18px;
+}
 
-h1 {
-    width: 378px;
-    font-weight: 400;
-    margin: auto;
-    text-align: center;
-    padding: .5em;
-    margin-bottom: 1em;
-    margin-top: 0;
-    font-weight: bold;
-   
-
+.onderaan{
+    position: absolute;
+    bottom: 25px;
+    margin-top: 0;   
 }
 
 img{
-    width: 600px;
+    width: 78%;
     padding: 100px;
+}
+
+label{
+    
+    font-size: 24px;
+    font-weight: 400;
+    padding: 16px;
+    padding-bottom: 8px;
     padding-left: 0;
-   
-    
 }
 
-
-
-form {
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width:100%;
-}
-
-form section.container {
-    
-    height: 100%;
-    border-radius: 2em;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
-    
+input{
+   border: none; 
+   color: #EF99A3;
+   padding: 16px; 
+   font-size: 16px;
 
 }
 
-form input.hide{
-    display: none;
-}
-
-label {
-    margin: .5em;
-    margin-left: 0;
-    border: none;
-    margin-top: 1em;
-    font-weight: 200;
-
-}
-
-input {
-    padding: 1em;
-    border: none;
-    margin-bottom: 1em;
-    background-color: #faf4f6;
-    border-radius: 2em;
-    caret-color: DeepPink;
-    
-}
-
-button {
-    padding: .5em;
-    margin-top: 2em;
-    margin-bottom: .5em;
-    border: none;
-    font-weight: bold;
+button{
     width: 50%;
-    padding: .8em;
-    border-radius: 2em;
-    background-color: #C0C0C0;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
-   
-
+    color: #EF99A3;
+    background-color: #FFF;
+    border: none;
+    box-shadow: 3px 3px 2px 1px rgba(255, 255, 255, 0.2);
+    margin-top: 32px;
+    padding: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    transition: .5s ease-in-out;
 }
 
-
-button:hover {
-    background-color: #FFF0F5;
-    
+button:hover{
+    border: solid 1px #FFF;
+    background-color: #EF99A3;
+    color: #FFF;
+    cursor: pointer;
 }
 
 button:disabled{
     opacity: 25%;
 }
 
+#text{
+    color: red;
+}
 
-.container {
+#terms{
+   
+  height: 16px;
+  width: 16px;
+  background-color: rgb(255, 255, 255);
+}
+
+#terms:hover{
+    cursor: pointer;
+}
+
+
+.grid{
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+.container{
+
+    display: flex;
+    padding: 32px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #EF99A3;
+    
+}
+
+.flex{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-self: center;
-    background-color: #FFF;
-    padding: 2em;
-    border-radius: 2em;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+}
+
+.agree{
     
-
+    margin-top: 32px;
 }
 
-.flex {
-display: flex;
-flex-direction: column;
-}
-
-
-.pointed{
-    width: 7px;
-    height: 7px;
-    background-color: rgb(255, 0, 0);
-    border-radius: 50%;
-  }
-
-  .profile{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: auto;
-    background-color: #fff;
-    margin-top: 125px;
-    border-radius: 32px;
-    width: 500px;
-    height: 500px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
-  }
-
-
-  .profile h1{
-      font-size: 32px;
-      margin-top: 50px;
-  }
-  .profile p{
+.agree label{
     font-size: 18px;
-    width: 75%;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 16px;
 }
 
-.profile  form:first-of-type button{
-    margin-top: 100px;
-    
-}
-
-.profile  form:nth-of-type(2) button{
-    background-color: red;
-    color: #fff;
-    
-}
-
-.profile  form:nth-of-type(2) button:hover{
-    background-color: darkred;
-    
-}
-
-.info img{
-
-    margin: auto;
-    margin-top: 50px;
-    width: 600px;
-}
-
-.info{
+.naastelkaar{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 25px;
+}
+
+.naastelkaar button{
+    margin-right: 32px;
+    width: 200px;
+}
+
+.naastelkaar form:nth-of-type(2) button:hover{
+    background-color: red;
 }
 
 
+
+
+
+.hide{
+    display: none;
+}
 
   

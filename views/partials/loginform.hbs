@@ -1,33 +1,41 @@
-<form action="/login" method="POST">  
+<form class = "grid" action="/login" method="POST">  
 
- <img src="img/oppas.png" alt="Oppas illustratie">
-        <section class="container">   
+    <img src="img/oppas.png" alt="Oppas illustratie">
+
+    <section class="container">   
             
-            <h1>Log in</h1>
+            <h1>Inloggen</h1>
 
             {{#if messages.error}}
-{{messages.error}}
-{{/if}}
-   <form id="local-sign-in" action="/login" method="post">
+            {{messages.error}}
+            {{/if}}
+         
     
-        <section class="flex">
-        <label>Gebruikersnaam:</label>
-        <input type="text" name="username"/>
-        </section>
-    
-        <section class="flex">
-        <label>Wachtwoord:</label>
-        <input type="password" name="password"/>
-        </section>
+             <section class="flex">
 
-        <section>
-        <button type="submit" >Log in</button>
-        </section>
+                <label>Gebruikersnaam</label>
+                <input type="text" name="username"/>
+
+             </section>
+    
+             <section class="flex">
+
+                <label>Wachtwoord</label>
+                <input type="password" name="password"/>
+
+             </section>
+
+             <section>
+
+                <button type="submit" >Log in</button>
+
+            </section>
         
 
-            <p>Nog geen account? <a href="/register">Maak een account aan.</a></p>
-        </section>   
- </form>   
+                <p class ="onderaan">Nog geen account? <a href="/register">Maak een account aan.</a></p>
+
+    </section>   
+        </form>   
 
 
 

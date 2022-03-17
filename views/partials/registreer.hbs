@@ -1,36 +1,41 @@
-<form action="/register" method="POST">  
+<form class="grid" action="/register" method="POST">  
 
  <img src="img/oppas.png" alt="Oppas illustratie">
-        <section class="container">   
+    <section class="container">   
             
-            <h1>Registreer</h1>
+        <h1>Registreren</h1>
 
-            {{#if messages.error}}
-{{messages.error}}
-{{/if}}
+        {{#if messages.error}}
+        {{messages.error}}
+        {{/if}}
     
-   <form id="local-reg" action="/login" method="post" enctype="multipart/form-data" >
+        <form id="local-reg" action="/login" method="post" enctype="multipart/form-data" >
     
         <section class="flex">
-        <label>Gebruikersnaam:</label>
-        <input type="text" name="username"/>
+
+            <label>Gebruikersnaam</label>
+            <input type="text" name="username"/>
+
         </section>
 
         <section class="flex">
-        <label>Wachtwoord:</label>
-        <input type="password" name="password"/>
+
+            <label>Wachtwoord</label>
+            <input type="password" name="password"/>
+
         </section>
         
-        <section>
-        <input  type="checkbox" id="terms" name="terms_conditions" checked required >
-		<label for="terms">Ik ga akkoord met de <a href="#">algemene voorwaarden</a></label>
+        <section class = "agree">
+
+            <input  type="checkbox" id="terms" name="terms_conditions" checked required >
+		    <label for="terms">Ik ga akkoord met de <a href="#">algemene voorwaarden</a></label>
+
 		</section>
         
         <button type="submit" id = "submit" >Registreren</button>
     
-        
+        <p class ="onderaan"> Al een account? <a href="/login">Inloggen.</a></p>
 
-            <p>Al een account? <a href="/login">Log in.</a></p>
-        </section>   
+    </section>   
  </form>   
  

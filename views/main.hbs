@@ -3,40 +3,37 @@
 
 
 <main>
-  <section class = "info">
-  <img src="./img/oppas.png" alt="">
-  <section class = 'profile' >
+
+  
+  <section class = "grid">
+      <img src="./img/oppas.png" alt="">
+    <section class = 'container' >
     
-    <section  >
-      <h1>Profiel Informatie</h1>
-      <p>Welkom, {{user.username}}.</p>
-      <p> Wil je je account uitloggen of wil je je account verwijderen? maak je keuze hieronder</p>
+       <section  >
+          <h1>Profiel Informatie</h1>
+          <h2>Welkom, {{user.username}}.</h2>
+          <p> Wil je uitloggen of wil je jouw account verwijderen? Maak een keuze hieronder.</p>
 
-     <form action="/logout"  method='get'>
-
-
-                
-								<button type="submit" >Uitloggen</button>
-
-                
-		</form>
-
-    <form action="/"  method='POST'>
       
-      <input class="hide" name="delete" type="'hidden" value="{{user.username}}" />
-      <button type="submit" >Verwijder Account</button>
+        <section class ="naastelkaar">
+          <form action="/logout"  method='get'>
+           
+			      <button type="submit" >Uitloggen</button>
+          
+		      </form>
 
-     </form>
 
-    </section>
-    
+          <form action="/"  method='POST'>
       
-    
+            <input class="hide" name="delete" type="'hidden" value="{{user.username}}" />
+            <button type="submit" >Verwijder Account</button>
 
+          </form>
+        </section>
+        </section>
     
-    
-    </section>
-    </section>
+     </section>
+  </section>
 
     </main>
 
