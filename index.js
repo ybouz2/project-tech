@@ -146,13 +146,6 @@ app.get('/', (req, res) => {
 //Log-in pagina laten zien
 app.get('/login', (req, res) => {
   
-  if ( req.isAuthenticated() ) {
-    res.redirect('/')
-    return 
-  } 
- 
-  
-  
   res.render('login');
   
 });
@@ -161,10 +154,6 @@ app.get('/login', (req, res) => {
 //Registreer pagina laten zien
 app.get('/register', (req, res) => {
 
-  if ( req.isAuthenticated() ) {
-    res.redirect('/')
-    return 
-  } 
   res.render('register');
 });
 
