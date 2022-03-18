@@ -41,6 +41,7 @@ exports.localReg =  (username, password) => {
             const user = {
               "username": username,
               "password": hash,
+              
             
             }
   

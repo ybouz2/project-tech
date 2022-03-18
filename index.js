@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 /* eslint-disable no-undef */
 
 require('dotenv').config()
@@ -11,7 +11,6 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const { Db } = require('mongodb');
 const flash = require('express-flash');
 
 
@@ -39,7 +38,7 @@ passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
 
-
+ 
 // Gebruik de LocalStrategy in Passport om gebruikers in te loggen/ te registreren.
 passport.use('local-signin', new LocalStrategy(
   {passReqToCallback : true}, //Request naar Callback
@@ -146,24 +145,44 @@ app.get('/', (req, res) => {
 
 //Log-in pagina laten zien
 app.get('/login', (req, res) => {
+  
+  if ( req.isAuthenticated() ) {
+    res.redirect('/')
+    return 
+  } 
+ 
+  
+  
   res.render('login');
+  
 });
+
 
 //Registreer pagina laten zien
 app.get('/register', (req, res) => {
+
+  if ( req.isAuthenticated() ) {
+    res.redirect('/')
+    return 
+  } 
   res.render('register');
 });
 
 // Laat de gebruiker zijn/haar account verwijderen
 app.post("/", async (req, res) => {
 
-  await client.connect()
+  await client.connect() 
+
+ 
 
   client.db('Accounts').collection('AllAccounts').deleteOne({ username: req.body.delete })
+  
 
   res.redirect('/login')
 
 });
+
+
 
 // Verzendt het verzoek via de lokale aanmeldingsstrategie, en als dit lukt, wordt de gebruiker naar de startpagina geleid, anders keert hij terug naar de aanmeldingspagina
 app.post('/register', passport.authenticate('local-signup', {
@@ -191,6 +210,12 @@ app.get('/logout', (req, res) => {
   res.redirect('/');
   req.session.notice = "Succesvol uitgelogd " + name + "!";
 });
+
+//error handling
+app.get('*', (req, res) => {
+	res.render('errors');
+});
+
 
 
 

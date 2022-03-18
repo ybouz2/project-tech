@@ -1,7 +1,5 @@
-console.log("TEST");
-
-const terms = document.getElementById("terms")
-const btn = document.getElementById("submit")
+const terms = document.getElementById("terms");
+const btn = document.getElementById("submit");
 
 const rmRequired = () => {
     document.getElementById("terms").removeAttribute("required");
