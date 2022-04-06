@@ -141,7 +141,25 @@ button:disabled{
 }
 
 
+#hoogte{
+    height: 675px;
 
+}
+
+.quote{
+    background-color: white;
+    
+}
+
+
+#results p{
+    color:#EF99A3;
+    font-size: 34px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
 
 
 .hide{
